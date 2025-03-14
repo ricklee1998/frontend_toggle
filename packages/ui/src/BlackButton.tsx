@@ -1,5 +1,5 @@
-'use-client'
-import '../css/blackButton.css'
+"use-client";
+import "../css/blackButton.css";
 
 interface ButtonProps {
   text: string;
@@ -7,14 +7,14 @@ interface ButtonProps {
   width?: number;
 }
 
-export const BlackButton = ({ text, onClick, width}: ButtonProps) => {
+export const BlackButton = ({ text, onClick, width }: ButtonProps) => {
   return (
-    <button 
-      className="black-button" 
+    <button
+      className="black-button"
       onClick={onClick}
-      style={{ width: width ? width : '335px' }}
+      style={{ width: width ? width : "335px" }}
     >
       {text}
     </button>
   );
-}
+};
