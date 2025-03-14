@@ -151,6 +151,9 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.67.3
         version: 5.67.3(react@19.0.0)
+      '@types/lodash':
+        specifier: ^4.14.202
+        version: 4.17.16
       axios:
         specifier: ^1.8.3
         version: 1.8.3
@@ -173,9 +176,6 @@ importers:
       '@eslint/js':
         specifier: ^9.21.0
         version: 9.22.0
-      '@types/lodash':
-        specifier: ^4.17.16
-        version: 4.17.16
       '@types/react':
         specifier: ^19.0.10
         version: 19.0.10
