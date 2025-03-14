@@ -2,7 +2,8 @@ import { BlackButton } from "@repo/ui/blackButton";
 import "./Detail.css";
 import { useNavigate } from "react-router-dom";
 import type { ImageInfo } from "../../interface/detail";
-
+import { useState } from "react";
+import { debounce } from "lodash";
 const Detail = ({
   data,
   loadedImage,
@@ -11,10 +12,16 @@ const Detail = ({
   loadedImage: HTMLImageElement | null;
 }) => {
   const navigate = useNavigate();
+  const [isBtnLoading, setIsBtnLoading] = useState(false);
+
   const buttonClick = () => {
-    console.log("Clicked");
-    navigate("/");
+    setIsBtnLoading(true);
+    handleClick();
   };
+  const handleClick = debounce(() => {
+    navigate("/");
+    setIsBtnLoading(false);
+  }, 500);
 
   return (
     <div className="result-layout">
@@ -78,7 +85,13 @@ const Detail = ({
               </div>
             </div>
             <div>
-              <BlackButton text="이전" width={154} onClick={buttonClick} />
+              {isBtnLoading ? (
+                <button className="loading-button-detail">
+                  <div className="loading-spinner" />
+                </button>
+              ) : (
+                <BlackButton text="이전" width={154} onClick={buttonClick} />
+              )}
             </div>
           </div>
         </div>

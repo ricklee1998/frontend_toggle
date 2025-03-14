@@ -1,34 +1,37 @@
 import { useEffect, useState } from "react";
 import Detail from "../components/detail/Detail";
 import DetailSkeleton from "../components/detail/DetailSkeleton";
-import type { ImageInfo } from "../interface/detail";
+import { useImageStore } from "../store/useImageStore";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 export default function Result() {
   const [loadedImage, setLoadedImage] = useState<HTMLImageElement | null>(null);
-  const [imageLoading, setImageLoading] = useState(true);
+  const { imageInfo, setImageInfo } = useImageStore();
 
-  const { data, isLoading, error } = useQuery<ImageInfo>({
+  const { data, isLoading, error } = useQuery({
     queryKey: ["imageInfo"],
     queryFn: async () => {
       const response = await axios.get("https://picsum.photos/id/0/info");
-      return response.data;
+      const data = response.data;
+      setImageInfo(data);
+      return data;
     },
+    enabled: !imageInfo, // 기존 데이터가 있을 시 api skip
+    initialData: imageInfo, // 기존 데이터 초기값 설정
   });
+
   useEffect(() => {
-    if (!data) return;
+    if (!data || !imageInfo) return;
 
     const image = new Image();
     image.src = data.download_url;
 
     image.onload = () => {
       setLoadedImage(image);
-      setImageLoading(false);
     };
 
     image.onerror = () => {
-      setImageLoading(true);
       setLoadedImage(null);
     };
 
@@ -36,8 +39,9 @@ export default function Result() {
       image.onload = null;
       image.onerror = null;
     };
-  }, [data]);
-  if (isLoading || !data || imageLoading) return <DetailSkeleton />;
+  }, [data, imageInfo]);
+
+  if (isLoading || !data) return <DetailSkeleton />;
   if (error) return <div>에러</div>;
 
   return <Detail data={data} loadedImage={loadedImage} />;

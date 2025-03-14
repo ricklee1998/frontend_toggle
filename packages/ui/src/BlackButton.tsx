@@ -1,9 +1,9 @@
-"use client";
+'use-client'
 import '../css/blackButton.css'
 
 interface ButtonProps {
   text: string;
-  onClick: () => void;
+  onClick?: () => void;
   width?: number;
 }
 
