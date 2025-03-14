@@ -1,5 +1,5 @@
 "use-client";
-import "../css/BlackButtons.scss";
+import "../css/BlackButton.scss";
 import { noop } from "lodash";
 interface ButtonProps {
   text: string;

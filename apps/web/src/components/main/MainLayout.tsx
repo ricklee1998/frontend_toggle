@@ -1,4 +1,4 @@
-import { BlackButton } from "@repo/ui/BlackButtons";
+import { BlackButton } from "@repo/ui/BlackButton";
 import "./MainLayout.scss";
 import { useNavigate } from "react-router-dom";
 import { debounce } from "lodash";
@@ -13,7 +13,7 @@ const MainLayout = ({ name }: { name: string }) => {
   };
   // debounce 기능 추가
   const handleClick = debounce(() => {
-    navigate("/results");
+    navigate("/result");
     setIsBtnLoading(false);
   }, 500);
 
