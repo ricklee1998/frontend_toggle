@@ -11,3 +11,12 @@ console 지우기, 주석 달기, lint prettier
 font 전역으로 설정하기 "font-family: 'Pretendard', sans-serif;"
 
 이미지 최적화하기
+
+패키지 설치
+pnpm install
+
+실행 방법
+pnpm run dev
+
+코드 prettier format
+pnpm run format
