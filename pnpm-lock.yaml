@@ -142,6 +142,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@repo/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       react:
         specifier: ^19.0.0
         version: 19.0.0

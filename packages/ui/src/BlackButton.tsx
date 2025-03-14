@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import '../css/blackButton.css'
 
 interface ButtonProps {
@@ -6,12 +6,10 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-const BlackButton = ({ text, onClick}: ButtonProps) => {
+export const BlackButton = ({ text, onClick}: ButtonProps) => {
   return (
     <button className="black-button" onClick={onClick}>
       {text}
     </button>
   );
 }
-
-export default BlackButton;

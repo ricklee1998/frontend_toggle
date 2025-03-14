@@ -1,0 +1,32 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.header {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header p{
+  font-size: 15px;
+  color: #1a1a1a;
+}
+.body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body p{
+  font-size: 32px;
+  font-weight: 600;
+}
+.footer {
+  height: 144px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
