@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
 }
-.result-header p{
+.result-header p {
   font-size: 15px;
   color: #fff;
 }
@@ -36,7 +36,7 @@
   flex: 1;
   padding: 20px;
 }
-.left-box img{
+.left-box img {
   object-fit: contain;
   width: 100%;
   height: auto;
@@ -57,18 +57,17 @@
   text-align: left;
 }
 
-.info-box-content p{
+.info-box-content p {
   margin: 0;
   font-size: 15px;
-  color: #111
+  color: #111;
 }
 
-.info-box-content p span{
+.info-box-content p span {
   opacity: 50%;
   font-size: 15px;
-  color: #111
+  color: #111;
 }
-
 
 .info-box-row {
   display: flex;

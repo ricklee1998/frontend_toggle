@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
 }
-.main-header p{
+.main-header p {
   font-size: 15px;
   color: #1a1a1a;
 }
@@ -20,7 +20,7 @@
   align-items: center;
   justify-content: center;
 }
-.main-body p{
+.main-body p {
   font-size: 32px;
   font-weight: 600;
 }
