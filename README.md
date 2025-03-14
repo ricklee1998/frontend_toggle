@@ -13,17 +13,22 @@ font 전역으로 설정하기 "font-family: 'Pretendard', sans-serif;"
 이미지 최적화하기
 
 ## 패키지 설치
+
 ### `pnpm install`
 
 ## 실행 방법
+
 ### `pnpm run dev`
+
 - storybook: http://localhost:6006/?path=/docs/components-blackbutton--docs
 - web: http://localhost:5173/
 
 ## 코드 prettier format
+
 ### `pnpm run format`
 
 ## web 설명
+
 - web은 크게 main페이지, result페이지가 존재한다.
 - 버튼은 packages/ui에서 만든 BlackButton을 사용하고 있다.
 - 윈도우 resizing에 따라 width 기준.
@@ -32,5 +37,3 @@ font 전역으로 설정하기 "font-family: 'Pretendard', sans-serif;"
   3. lg: 769px 이상
 
 ## storybook 설명
-
-

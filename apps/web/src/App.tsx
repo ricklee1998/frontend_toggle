@@ -4,7 +4,7 @@ import Home from "./pages/index";
 import Result from "./pages/result";
 import NotFound from "./pages/404";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import './styles/global.scss';
+import "./styles/global.scss";
 
 const queryClient = new QueryClient();
 function App() {
