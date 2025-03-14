@@ -1,0 +1,32 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.main-header {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-header p{
+  font-size: 15px;
+  color: #1a1a1a;
+}
+.main-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-body p{
+  font-size: 32px;
+  font-weight: 600;
+}
+.main-footer {
+  height: 144px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

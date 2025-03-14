@@ -1,31 +1,23 @@
-.layout {
+.result-layout {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
+  gap: 40px;
+  padding: 0 0 60px 0;
 }
-.header {
+.result-header {
   height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.header p{
+.result-header p{
   font-size: 15px;
-  color: #1a1a1a;
+  color: #fff;
 }
-.body {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.body p{
-  font-size: 32px;
-  font-weight: 600;
-}
-.footer {
-  height: 144px;
+.result-body {
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

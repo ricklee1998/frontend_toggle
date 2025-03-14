@@ -1,18 +1,22 @@
 import { BlackButton } from '@repo/ui/blackButton';
 import './MainLayout.css';
+import { useNavigate } from 'react-router-dom';
+
 const MainLayout = ({name}: {name: string}) => {
+  const navigate = useNavigate();
   const buttonClick = () => {
     console.log("Clicked")
+    navigate('/Result');
   }
   return(
-    <div className="layout">
-      <div className="header">
+    <div className="main-layout">
+      <div className="main-header">
         <p>{"지원자분 성함을 적어주세요"}</p>
       </div>
-      <div className="body">
+      <div className="main-body">
         <p>{"안녕하세요"}<br/> {name}{"입니다"}</p>
       </div>
-      <div className="footer">
+      <div className="main-footer">
         <BlackButton text='다음' onClick={buttonClick}/>
       </div>
     </div>

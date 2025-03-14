@@ -1,12 +1,16 @@
 import './App.css'
-import MainLayout from './components/MainLayout'
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from "./pages/index";
+import Result from "./pages/Result"
 function App() {
 
   return (
-    <>
-      <MainLayout name={"이선위"}/>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} /> 
+        <Route path="/result/" element={<Result />} /> 
+      </Routes>
+    </BrowserRouter>
   )
 }
 
