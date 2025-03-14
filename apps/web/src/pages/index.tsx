@@ -1,5 +1,5 @@
-import MainLayout from "../components/main/MainLayout";
+import MainLayout from '../components/main/MainLayout';
 
 export default function Result() {
-  return <MainLayout name={"이선위"} />;
+  return <MainLayout name={'이선위'} />;
 }

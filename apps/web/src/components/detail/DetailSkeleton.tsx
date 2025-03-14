@@ -1,9 +1,9 @@
-import "./Detail.scss";
+import './Detail.scss';
 const DetailSkeleton = () => {
   return (
     <div className="result-layout">
       <div className="result-header">
-        <p>{"이선위"}</p>
+        <p>{'이선위'}</p>
       </div>
       <div className="result-body">
         <div className="result-body-container">

@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
-import Detail from "../components/detail/Detail";
-import DetailSkeleton from "../components/detail/DetailSkeleton";
-import { useImageStore } from "../store/useImageStore";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+import { useEffect, useState } from 'react';
+import Detail from '../components/detail/Detail';
+import DetailSkeleton from '../components/detail/DetailSkeleton';
+import { useImageStore } from '../store/useImageStore';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 
 export default function Result() {
   const [loadedImage, setLoadedImage] = useState<HTMLImageElement | null>(null);
   const { imageInfo, setImageInfo } = useImageStore();
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ["imageInfo"],
+    queryKey: ['imageInfo'],
     queryFn: async () => {
-      const response = await axios.get("https://picsum.photos/id/0/info");
+      const response = await axios.get('https://picsum.photos/id/0/info');
       const data = response.data;
       setImageInfo(data);
       return data;

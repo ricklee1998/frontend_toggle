@@ -35,18 +35,18 @@ const MainLayout = ({ name }: { name: string }) => {
       </div>
       <div className="main-body">
         <p>
-          {"안녕하세요"}
+          {"안녕하세요"}       
           <br /> {name}
           {"입니다"}
         </p>
       </div>
       <div className="main-footer">
-        <BlackButton
-          text="다음"
-          fontSize={fontSize}
-          onClick={buttonClick}
-          isLoading={isBtnLoading}
-        />
+      <BlackButton
+        text="다음"
+        fontSize={fontSize}
+        onClick={buttonClick}
+        isLoading={isBtnLoading}
+      />
       </div>
     </div>
   );

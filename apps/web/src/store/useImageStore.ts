@@ -1,6 +1,6 @@
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
-import type { ImageInfo } from "../interface/detail";
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+import type { ImageInfo } from '../interface/detail';
 
 interface ImageStore {
   imageInfo: ImageInfo | null;
@@ -16,7 +16,7 @@ export const useImageStore = create<ImageStore>()(
       clearImageInfo: () => set({ imageInfo: null }),
     }),
     {
-      name: "image-storage",
+      name: 'image-storage',
     },
   ),
 );

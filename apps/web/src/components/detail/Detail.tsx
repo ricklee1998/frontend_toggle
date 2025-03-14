@@ -1,9 +1,9 @@
-import { BlackButton } from "@repo/ui/BlackButton";
-import "./Detail.scss";
-import { useNavigate } from "react-router-dom";
-import type { ImageInfo } from "../../interface/detail";
-import { useEffect, useState } from "react";
-import { debounce } from "lodash";
+import { BlackButton } from '@repo/ui/BlackButton';
+import './Detail.scss';
+import { useNavigate } from 'react-router-dom';
+import type { ImageInfo } from '../../interface/detail';
+import { useEffect, useState } from 'react';
+import { debounce } from 'lodash';
 const Detail = ({
   data,
   loadedImage,
@@ -20,7 +20,7 @@ const Detail = ({
   };
   // debounce 기능 추가
   const handleClick = debounce(() => {
-    navigate("/");
+    navigate('/');
     setIsBtnLoading(false);
   }, 500);
 
@@ -30,40 +30,38 @@ const Detail = ({
       setIsSmSize(window.innerWidth > 375 ? false : true);
     };
     handleResize();
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
   return (
     <div
       className="result-layout"
       style={{
-        backgroundImage: loadedImage ? `url(${loadedImage.src})` : "none",
+        backgroundImage: loadedImage ? `url(${loadedImage.src})` : 'none',
       }}
     >
       <div className="result-header">
-        <p>{"이선위"}</p>
+        <p>{'이선위'}</p>
       </div>
       <div className="result-body">
         <div className="result-body-container">
           <div className="left-box">
-            {loadedImage ? (
-              <img src={loadedImage.src} alt={data.author} loading="lazy" />
-            ) : null}
+            {loadedImage ? <img src={loadedImage.src} alt={data.author} loading="lazy" /> : null}
           </div>
           <div className="right-box">
             <div className="info-box-row">
               <div className="info-box-content">
                 <p>
-                  {"id"}
+                  {'id'}
                   <br />
                   <span>{data.id}</span>
                 </p>
               </div>
               <div className="info-box-content">
                 <p>
-                  {"author"}
+                  {'author'}
                   <br />
                   <span>{data.author}</span>
                 </p>
@@ -72,23 +70,23 @@ const Detail = ({
             <div className="info-box-row">
               <div className="info-box-content">
                 <p>
-                  {"width"}
+                  {'width'}
                   <br />
-                  <span>{Number(data.width).toLocaleString("ko-KR")}</span>
+                  <span>{Number(data.width).toLocaleString('ko-KR')}</span>
                 </p>
               </div>
               <div className="info-box-content">
                 <p>
-                  {"height"}
+                  {'height'}
                   <br />
-                  <span>{Number(data.height).toLocaleString("ko-KR")}</span>
+                  <span>{Number(data.height).toLocaleString('ko-KR')}</span>
                 </p>
               </div>
             </div>
             <div className="info-box-col">
               <div className="info-box-content">
                 <p>
-                  {"url"}
+                  {'url'}
                   <br />
                   <span>
                     <a
@@ -104,7 +102,7 @@ const Detail = ({
               </div>
               <div className="info-box-content">
                 <p>
-                  {"download_url"}
+                  {'download_url'}
                   <br />
                   <span>
                     <a
@@ -122,7 +120,7 @@ const Detail = ({
             <div>
               <BlackButton
                 text="이전"
-                width={isSmSize ? "335px" : "154px"}
+                width={isSmSize ? '335px' : '154px'}
                 onClick={buttonClick}
                 isLoading={isBtnLoading}
               />
