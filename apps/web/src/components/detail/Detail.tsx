@@ -1,8 +1,8 @@
 import { BlackButton } from "@repo/ui/BlackButton";
-import "./Detail.css";
+import "./Detail.scss";
 import { useNavigate } from "react-router-dom";
 import type { ImageInfo } from "../../interface/detail";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { debounce } from "lodash";
 const Detail = ({
   data,
@@ -12,8 +12,8 @@ const Detail = ({
   loadedImage: HTMLImageElement | null;
 }) => {
   const navigate = useNavigate();
-  const [isBtnLoading, setIsBtnLoading] = useState(false);
-
+  const [isBtnLoading, setIsBtnLoading] = useState<boolean>(false);
+  const [isSmSize, setIsSmSize] = useState<boolean>(false);
   const buttonClick = () => {
     setIsBtnLoading(true);
     handleClick();
@@ -23,6 +23,16 @@ const Detail = ({
     setIsBtnLoading(false);
   }, 500);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmSize(window.innerWidth > 375 ? false : true);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <div className="result-layout">
       <div className="result-header">
@@ -57,14 +67,14 @@ const Detail = ({
                 <p>
                   {"width"}
                   <br />
-                  <span>{data.width}</span>
+                  <span>{Number(data.width).toLocaleString("ko-KR")}</span>
                 </p>
               </div>
               <div className="info-box-content">
                 <p>
                   {"height"}
                   <br />
-                  <span>{data.height}</span>
+                  <span>{Number(data.height).toLocaleString("ko-KR")}</span>
                 </p>
               </div>
             </div>
@@ -73,24 +83,46 @@ const Detail = ({
                 <p>
                   {"url"}
                   <br />
-                  <span>{data.url}</span>
+                  <span>
+                    <a
+                      href={data.download_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="download-link"
+                    >
+                      {data.url}
+                    </a>
+                  </span>
                 </p>
               </div>
               <div className="info-box-content">
                 <p>
                   {"download_url"}
                   <br />
-                  <span>{data.download_url}</span>
+                  <span>
+                    <a
+                      href={data.download_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="download-link"
+                    >
+                      {data.download_url}
+                    </a>
+                  </span>
                 </p>
               </div>
             </div>
             <div>
               {isBtnLoading ? (
-                <button className="loading-button-detail">
+                <button className="loading-btn-detail">
                   <div className="loading-spinner" />
                 </button>
               ) : (
-                <BlackButton text="이전" width={154} onClick={buttonClick} />
+                <BlackButton
+                  text="이전"
+                  width={isSmSize ? "335px" : "154px"}
+                  onClick={buttonClick}
+                />
               )}
             </div>
           </div>

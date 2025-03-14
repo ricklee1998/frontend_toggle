@@ -1,11 +1,12 @@
 import { BlackButton } from "@repo/ui/BlackButton";
-import "./MainLayout.css";
+import "./MainLayout.scss";
 import { useNavigate } from "react-router-dom";
 import { debounce } from "lodash";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const MainLayout = ({ name }: { name: string }) => {
   const navigate = useNavigate();
-  const [isBtnLoading, setIsBtnLoading] = useState(false);
+  const [isBtnLoading, setIsBtnLoading] = useState<boolean>(false);
+  const [fontSize, setFontSize] = useState<string>("16px");
   const buttonClick = () => {
     setIsBtnLoading(true);
     handleClick();
@@ -14,6 +15,16 @@ const MainLayout = ({ name }: { name: string }) => {
     navigate("/Result");
     setIsBtnLoading(false);
   }, 500);
+  useEffect(() => {
+    const handleResize = () => {
+      setFontSize(window.innerWidth > 768 ? "24px" : "16px");
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <div className="main-layout">
       <div className="main-header">
@@ -28,11 +39,11 @@ const MainLayout = ({ name }: { name: string }) => {
       </div>
       <div className="main-footer">
         {isBtnLoading ? (
-          <button className="loading-button-main">
+          <button className="loading-btn-main">
             <div className="loading-spinner" />
           </button>
         ) : (
-          <BlackButton text="다음" onClick={buttonClick} />
+          <BlackButton text="다음" fontSize={fontSize} onClick={buttonClick} />
         )}
       </div>
     </div>

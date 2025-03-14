@@ -1,4 +1,4 @@
-import "./Detail.css";
+import "./Detail.scss";
 const DetailSkeleton = () => {
   return (
     <div className="result-layout">
