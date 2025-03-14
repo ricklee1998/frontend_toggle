@@ -1,4 +1,4 @@
-import { BlackButton } from "@repo/ui/blackButton";
+import { BlackButton } from "@repo/ui/BlackButton";
 import "./Detail.css";
 import { useNavigate } from "react-router-dom";
 import type { ImageInfo } from "../../interface/detail";
