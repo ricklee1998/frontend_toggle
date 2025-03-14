@@ -34,7 +34,8 @@ const Detail = ({
     };
   }, []);
   return (
-    <div className="result-layout">
+    <div className="result-layout" style={{
+      backgroundImage: loadedImage ? `url(${loadedImage.src})` : 'none'}}>
       <div className="result-header">
         <p>{"이선위"}</p>
       </div>
@@ -42,7 +43,7 @@ const Detail = ({
         <div className="result-body-container">
           <div className="left-box">
             {loadedImage ? (
-              <img src={loadedImage.src} alt={data.author} />
+              <img src={loadedImage.src} alt={data.author} loading="lazy"/>
             ) : null}
           </div>
           <div className="right-box">

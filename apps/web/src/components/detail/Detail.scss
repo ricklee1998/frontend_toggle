@@ -6,6 +6,28 @@
   gap: 40px;
   padding: 0 0 60px 0;
   background-color: #fafafa;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    z-index: 1;
+  }
+
+  .result-header,
+  .result-body {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 .result-header {
