@@ -38,13 +38,12 @@ const MainLayout = ({ name }: { name: string }) => {
         </p>
       </div>
       <div className="main-footer">
-        {isBtnLoading ? (
-          <button className="loading-btn-main">
-            <div className="loading-spinner" />
-          </button>
-        ) : (
-          <BlackButton text="다음" fontSize={fontSize} onClick={buttonClick} />
-        )}
+        <BlackButton
+          text="다음"
+          fontSize={fontSize}
+          onClick={buttonClick}
+          isLoading={isBtnLoading}
+        />
       </div>
     </div>
   );

@@ -118,17 +118,12 @@ const Detail = ({
               </div>
             </div>
             <div>
-              {isBtnLoading ? (
-                <button className="loading-btn-detail">
-                  <div className="loading-spinner" />
-                </button>
-              ) : (
-                <BlackButton
-                  text="이전"
-                  width={isSmSize ? "335px" : "154px"}
-                  onClick={buttonClick}
-                />
-              )}
+              <BlackButton
+                text="이전"
+                width={isSmSize ? "335px" : "154px"}
+                onClick={buttonClick}
+                isLoading={isBtnLoading}
+              />
             </div>
           </div>
         </div>

@@ -1,11 +1,12 @@
 "use-client";
 import "../css/blackButton.scss";
-
+import { noop } from "lodash";
 interface ButtonProps {
   text: string;
   onClick?: () => void;
   width?: string;
   fontSize?: string;
+  isLoading: boolean;
 }
 
 export const BlackButton = ({
@@ -13,17 +14,18 @@ export const BlackButton = ({
   onClick,
   width,
   fontSize,
+  isLoading,
 }: ButtonProps) => {
   return (
     <button
       className="black-button"
-      onClick={onClick}
+      onClick={isLoading ? noop : onClick}
       style={{
         width: width ? width : "335px",
         fontSize: fontSize ? fontSize : "16px",
       }}
     >
-      {text}
+      {isLoading ? <div className="loading-spinner" /> : text}
     </button>
   );
 };
