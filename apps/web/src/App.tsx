@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/index';
-import Result from './pages/result';
+import Results from './pages/results';
 import NotFound from './pages/404';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import './styles/global.scss';
@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/result" element={<Result />} />
+          <Route path="/results" element={<Results />} />
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<Navigate replace to="/404" />} />
         </Routes>
