@@ -1,4 +1,4 @@
-import { BlackButton } from '@repo/ui/BlackButton';
+import { BlackButton } from '@repo/ui/BlackButtons';
 import './Detail.scss';
 import { useNavigate } from 'react-router-dom';
 import type { ImageInfo } from '../../interface/detail';
@@ -20,7 +20,7 @@ const Detail = ({
   };
   // debounce 기능 추가
   const handleClick = debounce(() => {
-    navigate('/');
+    navigate("/");
     setIsBtnLoading(false);
   }, 500);
 
