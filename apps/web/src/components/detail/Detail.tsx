@@ -18,11 +18,13 @@ const Detail = ({
     setIsBtnLoading(true);
     handleClick();
   };
+  // debounce 기능 추가
   const handleClick = debounce(() => {
     navigate("/");
     setIsBtnLoading(false);
   }, 500);
 
+  //handleResize에 따라 css 사이즈 설정
   useEffect(() => {
     const handleResize = () => {
       setIsSmSize(window.innerWidth > 375 ? false : true);

@@ -11,10 +11,13 @@ const MainLayout = ({ name }: { name: string }) => {
     setIsBtnLoading(true);
     handleClick();
   };
+  // debounce 기능 추가
   const handleClick = debounce(() => {
     navigate("/Result");
     setIsBtnLoading(false);
   }, 500);
+
+  //handleResize에 따라 css 사이즈 설정
   useEffect(() => {
     const handleResize = () => {
       setFontSize(window.innerWidth > 768 ? "24px" : "16px");
