@@ -13,6 +13,10 @@
 
 ### `pnpm run format`
 
+### Production
+
+- https://frontend-toggle-1z3na3i7x-sunnys-projects-81896182.vercel.app
+
 ## web 설명
 
 - web은 크게 main페이지, result페이지가 존재한다.
@@ -35,7 +39,6 @@
 ## 현재 해결하지 못한 것들
 
 - 이미지 렌더링 느림 현상
-- vercel 사용해서 배포
 
 ## 생각
 
