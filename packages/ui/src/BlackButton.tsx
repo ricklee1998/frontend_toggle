@@ -3,12 +3,17 @@ import '../css/blackButton.css'
 
 interface ButtonProps {
   text: string;
-  onClick?: () => void;
+  onClick: () => void;
+  width?: number;
 }
 
-export const BlackButton = ({ text, onClick}: ButtonProps) => {
+export const BlackButton = ({ text, onClick, width}: ButtonProps) => {
   return (
-    <button className="black-button" onClick={onClick}>
+    <button 
+      className="black-button" 
+      onClick={onClick}
+      style={{ width: width ? width : '335px' }}
+    >
       {text}
     </button>
   );
