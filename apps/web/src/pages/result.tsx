@@ -4,6 +4,7 @@ import DetailSkeleton from '../components/detail/DetailSkeleton';
 import { useImageStore } from '../store/useImageStore';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import '../components/detail/Detail.scss';
 
 export default function Result() {
   const [loadedImage, setLoadedImage] = useState<HTMLImageElement | null>(null);
@@ -44,5 +45,8 @@ export default function Result() {
   if (isLoading || !data) return <DetailSkeleton />;
   if (error) return <div>에러</div>;
 
-  return <Detail data={data} loadedImage={loadedImage} />;
+  return (
+  <div className="result-background">
+    <Detail data={data} loadedImage={loadedImage} />
+  </div>)
 }

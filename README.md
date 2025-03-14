@@ -15,7 +15,7 @@
 
 ### Production
 
-- https://frontend-toggle-1z3na3i7x-sunnys-projects-81896182.vercel.app
+- https://frontend-toggle-web.vercel.app/
 
 ## web 설명
 
