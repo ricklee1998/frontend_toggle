@@ -3,21 +3,30 @@ import "./Detail.css";
 import { useNavigate } from "react-router-dom";
 import type { ImageInfo } from "../../interface/detail";
 
-const Detail = ({ data }: { data: ImageInfo }) => {
+const Detail = ({
+  data,
+  loadedImage,
+}: {
+  data: ImageInfo;
+  loadedImage: HTMLImageElement | null;
+}) => {
   const navigate = useNavigate();
   const buttonClick = () => {
     console.log("Clicked");
     navigate("/");
   };
+
   return (
     <div className="result-layout">
       <div className="result-header">
-        <p>{"지원자분 성함을 적어주세요"}</p>
+        <p>{"이선위"}</p>
       </div>
       <div className="result-body">
         <div className="result-body-container">
           <div className="left-box">
-            <img src={data.download_url} alt={data.author} />
+            {loadedImage ? (
+              <img src={loadedImage.src} alt={data.author} />
+            ) : null}
           </div>
           <div className="right-box">
             <div className="info-box-row">

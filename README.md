@@ -9,3 +9,5 @@ storybook, web 생성
 console 지우기, 주석 달기, lint prettier
 사진 배경 넣기
 font 전역으로 설정하기 "font-family: 'Pretendard', sans-serif;"
+
+이미지 최적화하기

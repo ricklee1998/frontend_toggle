@@ -11,7 +11,7 @@ const MainLayout = ({ name }: { name: string }) => {
   return (
     <div className="main-layout">
       <div className="main-header">
-        <p>{"지원자분 성함을 적어주세요"}</p>
+        <p>{"이선위"}</p>
       </div>
       <div className="main-body">
         <p>
