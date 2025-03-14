@@ -46,7 +46,8 @@ export default function Result() {
   if (error) return <div>에러</div>;
 
   return (
-  <div className="result-background">
-    <Detail data={data} loadedImage={loadedImage} />
-  </div>)
+    <div className="result-background">
+      <Detail data={data} loadedImage={loadedImage} />
+    </div>
+  );
 }

@@ -20,7 +20,7 @@ const Detail = ({
   };
   // debounce 기능 추가
   const handleClick = debounce(() => {
-    navigate("/");
+    navigate('/');
     setIsBtnLoading(false);
   }, 500);
 
